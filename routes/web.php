@@ -24,4 +24,7 @@ Route::get('/layanan', function () {
     return view('service');
 })->name('service');
 
+Route::prefix('/store')->group(function () {
+    Route::view('/', 'store')->name('store');
+});
 Route::view('/test', 'test');

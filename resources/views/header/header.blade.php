@@ -41,6 +41,13 @@
                 </div>
             </a>
             
+            <a href="{{ route('store') }}" class="text-white font-semibold text-sm {{ Route::is('store') ? 'bg-blue-900 rounded-md' : '' }}">
+                <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
+                    store
+                </div>
+            </a>
+            
+            
         </div>
     </div>
 
@@ -97,6 +104,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"></path>
             </svg>
             <span class="font-semibold text-sm">Layanan</span>
+        </a>
+        <a href="{{ route('store') }}" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+            <!-- Ikon Keranjang -->
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5h12l-2-5M9 21h6"></path>
+            </svg>
+            <span class="font-semibold text-sm">store</span>
         </a>
        
     </div>

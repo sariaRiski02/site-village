@@ -184,21 +184,21 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Pantai Desa" class="w-full h-64 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Pantai Desa" class="w-full h-64 object-cover">
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Pantai Desa Kema 3</h3>
                         <p class="text-gray-700">Pemandangan pantai di bagian timur desa yang berbatasan dengan Laut Maluku.</p>
                     </div>
                 </div>
                 <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Pemukiman Desa" class="w-full h-64 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Pemukiman Desa" class="w-full h-64 object-cover">
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Pemukiman Warga</h3>
                         <p class="text-gray-700">Pemukiman warga yang tertata rapi di pusat Desa Kema 3.</p>
                     </div>
                 </div>
                 <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Tambak" class="w-full h-64 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Tambak" class="w-full h-64 object-cover">
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Area Tambak dan Rawa</h3>
                         <p class="text-gray-700">Area tambak yang menjadi salah satu sumber mata pencaharian warga.</p>

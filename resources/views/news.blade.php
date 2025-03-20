@@ -4,7 +4,7 @@
    @section('main')
        
     <!-- Berita Terbaru --> 
-    <section class="py-12 bg-white">
+    <section class="py-5 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">Berita Terbaru</h2>
@@ -16,7 +16,7 @@
             <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
                 <div class="md:flex">
                     <div class="md:w-1/2">
-                        <img src="/api/placeholder/800/500" alt="Program Vaksinasi" class="w-full h-full object-cover">
+                        <img src="{{ asset('images/hero.png') }}" alt="Program Vaksinasi" class="w-full h-full object-cover">
                     </div>
                     <div class="md:w-1/2 p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">15 Maret 2025</div>
@@ -31,7 +31,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- News Item 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Pembangunan Jalan" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Pembangunan Jalan" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">10 Maret 2025</div>
                         <h3 class="font-bold text-xl mb-2">Pembangunan Jalan Desa Rampung</h3>
@@ -42,7 +42,7 @@
 
                 <!-- News Item 2 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Pelatihan Pertanian" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Pelatihan Pertanian" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">5 Maret 2025</div>
                         <h3 class="font-bold text-xl mb-2">Pelatihan Pertanian Organik untuk Petani Desa</h3>
@@ -53,7 +53,7 @@
 
                 <!-- News Item 3 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Pembukaan BUMDES" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Pembukaan BUMDES" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">28 Februari 2025</div>
                         <h3 class="font-bold text-xl mb-2">BUMDES Baru Dibuka untuk Tingkatkan Ekonomi Desa</h3>
@@ -64,7 +64,7 @@
 
                 <!-- News Item 4 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Festival Budaya" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Festival Budaya" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">20 Februari 2025</div>
                         <h3 class="font-bold text-xl mb-2">Festival Budaya Tahunan Desa Kema 3</h3>
@@ -75,7 +75,7 @@
 
                 <!-- News Item 5 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Program Beasiswa" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Program Beasiswa" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">15 Februari 2025</div>
                         <h3 class="font-bold text-xl mb-2">Program Beasiswa untuk Siswa Berprestasi</h3>
@@ -86,7 +86,7 @@
 
                 <!-- News Item 6 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="/api/placeholder/600/400" alt="Posyandu" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/hero.png') }}" alt="Posyandu" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-[#071952] text-sm font-bold mb-2">10 Februari 2025</div>
                         <h3 class="font-bold text-xl mb-2">Renovasi Posyandu Desa Selesai Dilaksanakan</h3>

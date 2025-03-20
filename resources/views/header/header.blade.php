@@ -1,5 +1,5 @@
  <!-- Header -->
- <header id="header" class="fixed left-0 top-0 w-full h-20 flex items-center pt-2 px-3 md:px-15">
+ <header id="header" class="fixed z-50 left-0 top-0 w-full h-20 flex items-center pt-2 px-3 md:px-15">
     <div class="h-full w-full bg-[#071952] rounded-[1vw] flex justify-between items-center px-10 shadow-lg">
         <div class="md:hidden flex items-center">
             <button id="toggleSidebar" class="text-white focus:outline-none">
@@ -10,34 +10,34 @@
         </div>
         <div id="logo" class="text-white font-bold text-lg">Kema3</div>
         <div id="navbar" class="gap-2 text-white hidden md:flex">
-            <a href="{{ route('home') }}" class="text-white font-semibold text-sm">
+            <a href="{{ route('home') }}" class="text-white font-semibold text-sm {{ Route::is('home') ? 'bg-blue-900 rounded-md' : '' }} ">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
                     Beranda
                 </div>
             </a>
-            <a href="{{ route('gov') }}" class="text-white font-semibold text-sm">
+            <a href="{{ route('gov') }}" class="text-white font-semibold text-sm {{ Route::is('gov') ? 'bg-blue-900 rounded-md' : '' }}">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
                     Pemerintahan
                 </div>
             </a>
-            <a href="" class="text-white font-semibold text-sm">
+            <a href="{{ route('demo') }}" class="text-white font-semibold text-sm {{ Route::is('demo') ? 'bg-blue-900 rounded-md' : '' }}">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
                     Demografi
                 </div>
             </a>
-            <a href="" class="text-white font-semibold text-sm">
+            <a href="{{ route('geo') }}" class="text-white font-semibold text-sm {{ Route::is('geo') ? 'bg-blue-900 rounded-md' : '' }}">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
                     Geografis
                 </div>
             </a>
-            <a href="" class="text-white font-semibold text-sm">
+            <a href="{{ route('news') }}" class="text-white font-semibold text-sm {{ Route::is('news') ? 'bg-blue-900 rounded-md' : '' }}">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
                     Berita
                 </div>
             </a>
-            <a href="" class="text-white font-semibold text-sm">
+            <a href="{{ route('service') }}" class="text-white font-semibold text-sm {{ Route::is('service') ? 'bg-blue-900 rounded-md' : '' }}">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">
-                    Tentang
+                    Layanan
                 </div>
             </a>
             
@@ -67,7 +67,7 @@
             <span class="font-semibold text-sm">Pemerintahan</span>
         </a>
         
-        <a href="" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+        <a href="{{ route('demo') }}" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
             <!-- Ikon Orang untuk Demografi -->
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 14c3 0 5 2 5 5v1H3v-1c0-3 2-5 5-5"></path>
@@ -76,7 +76,7 @@
             <span class="font-semibold text-sm">Demografi</span>
         </a>
         
-        <a href="" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+        <a href="{{ route('geo') }}" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
             <!-- Ikon Peta untuk Geografis -->
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l6-3 6 3 6-3v13l-6 3-6-3-6 3V8z"></path>
@@ -91,12 +91,12 @@
             </svg>
             <span class="font-semibold text-sm">Berita</span>
         </a>
-        <a href="" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+        <a href="{{ route('service') }}" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
             <!-- Ikon Informasi -->
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"></path>
             </svg>
-            <span class="font-semibold text-sm">Tentang</span>
+            <span class="font-semibold text-sm">Layanan</span>
         </a>
        
     </div>

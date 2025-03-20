@@ -13,7 +13,7 @@
         }
     </style>
   </head>
-  <body class="px-3 md:px-15 h-200">
+  <body class="px-3 md:px-15">
    
     {{-- Header --}}
     @include('header.header')
@@ -23,13 +23,7 @@
     @yield('main')
     </main>
 
-    <footer class="mt-6 bg-gray-900" style="font-family: Arial, sans-serif;"></footer>
-        <div class="container mx-auto px-6 lg:px-16 bg-gray-100 p-3">
-            <p class="text-sm text-center">
-                Desa Kema III | Website by <a href="https://mrizkysaria.netlify.app" class="hover:text-sky-400 transition duration-300">Rizky Saria</a>
-            </p>
-        </div>
-    </footer>
+    @include('footer.footer')
     
     
     <script>

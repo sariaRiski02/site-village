@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <div class="flex items-center mb-4">
-                    <img src="/api/placeholder/50/50" alt="Logo Desa" class="h-12 w-12 rounded-full mr-3">
+                    <img src="{{ asset('images/kades.png') }}" alt="Logo Desa" class="h-12 w-12 rounded-full mr-3">
                     <div>
                         <h3 class="text-xl font-bold">Desa Kema 3</h3>
                         <p class="text-sm text-blue-200">Membangun Desa, Memajukan Bangsa</p>

@@ -4,13 +4,32 @@
    @section('main')
        
     <!-- Berita Terbaru --> 
-    <section class="py-5 bg-white">
+    <section class="pb-5 bg-white">
+
         <div class="container mx-auto px-4">
+            <!-- Search Bar -->
+            <div class="mb-8">
+                <form action="" method="GET" class="flex items-center justify-center">
+                    <input 
+                        type="text" 
+                        name="query" 
+                        placeholder="Cari berita..." 
+                        class="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#071952] focus:border-transparent"
+                    >
+                    <button 
+                        type="submit" 
+                        class="px-4 py-2 cursor-pointer bg-[#071952] text-white rounded-r-md hover:bg-bluez-800 transition duration-300"
+                    >  Cari
+                    </button>
+                </form>
+            </div>
+
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">Berita Terbaru</h2>
                 <div class="w-24 h-1 bg-[#071952] mx-auto"></div>
                 <p class="mt-4 text-gray-600">Informasi dan kegiatan terbaru di Desa Kema 3</p>
             </div>
+            
             
             <!-- Featured News -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-10">

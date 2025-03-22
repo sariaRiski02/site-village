@@ -63,7 +63,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Kepala Desa -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="Kepala Desa" class="w-full h-64 object-cover object-center">
+                    <img src="{{ asset('images/kades.png') }}" alt="Kepala Desa" class="w-full h-64 object-cover object-center">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800">Bapak Suryono</h3>
                         <p class="text-[#071952] font-medium">Kepala Desa</p>
@@ -72,7 +72,7 @@
                 </div>
                 <!-- Sekretaris Desa -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="Sekretaris Desa" class="w-full h-64 object-cover object-center">
+                    <img src="{{ asset('images/kades.png') }}" alt="Sekretaris Desa" class="w-full h-64 object-cover object-center">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800">Ibu Maharani</h3>
                         <p class="text-[#071952] font-medium">Sekretaris Desa</p>
@@ -81,11 +81,54 @@
                 </div>
                 <!-- BPD -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="Ketua BPD" class="w-full h-64 object-cover object-center">
+                    <img src="{{ asset('images/kades.png') }}" alt="Ketua BPD" class="w-full h-64 object-cover object-center">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800">Bapak Riyanto</h3>
                         <p class="text-gray-600 font-medium">Ketua BPD</p>
                         <p class="text-gray-600 mt-2">Memimpin Badan Permusyawaratan Desa yang mewakili aspirasi masyarakat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-[#071952] hover:bg-[#a3b9ff] text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Lihat Struktur Lengkap</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur BPD -->
+    <section id="struktur-bpd" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Struktur BPD</h2>
+                <div class="w-24 h-1 bg-[#071952] mx-auto"></div>
+                <p class="mt-4 text-gray-600">Struktur organisasi Badan Permusyawaratan Desa (BPD) Desa Sejahtera</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Ketua BPD -->
+                <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ asset('images/ketua-bpd.png') }}" alt="Ketua BPD" class="w-full h-64 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Bapak Riyanto</h3>
+                        <p class="text-[#071952] font-medium">Ketua BPD</p>
+                        <p class="text-gray-600 mt-2">Memimpin Badan Permusyawaratan Desa dan mewakili aspirasi masyarakat desa.</p>
+                    </div>
+                </div>
+                <!-- Wakil Ketua BPD -->
+                <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ asset('images/wakil-bpd.png') }}" alt="Wakil Ketua BPD" class="w-full h-64 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Ibu Sulastri</h3>
+                        <p class="text-[#071952] font-medium">Wakil Ketua BPD</p>
+                        <p class="text-gray-600 mt-2">Mendukung Ketua BPD dalam menjalankan tugas dan fungsi BPD.</p>
+                    </div>
+                </div>
+                <!-- Sekretaris BPD -->
+                <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ asset('images/sekretaris-bpd.png') }}" alt="Sekretaris BPD" class="w-full h-64 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Bapak Sutrisno</h3>
+                        <p class="text-[#071952] font-medium">Sekretaris BPD</p>
+                        <p class="text-gray-600 mt-2">Bertanggung jawab atas administrasi dan dokumentasi kegiatan BPD.</p>
                     </div>
                 </div>
             </div>

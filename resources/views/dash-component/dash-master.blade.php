@@ -5,6 +5,8 @@
 <div class="p-4">
     <!-- Quick Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+        <!-- Card 1 -->
         <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500">
             <div class="flex justify-between items-center">
                 <div>
@@ -20,6 +22,7 @@
             </div>
         </div>
         
+        <!-- Card 2 -->
         <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500">
             <div class="flex justify-between items-center">
                 <div>
@@ -35,6 +38,7 @@
             </div>
         </div>
         
+        <!-- Card 3 -->
         <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-purple-500">
             <div class="flex justify-between items-center">
                 <div>
@@ -51,6 +55,7 @@
             </div>
         </div>
         
+        <!-- Card 4 -->
         <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-yellow-500">
             <div class="flex justify-between items-center">
                 <div>
@@ -376,4 +381,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+
 @endsection

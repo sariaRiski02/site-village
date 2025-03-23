@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\DashBerandaController;
 
 Route::get('/', [homeController::class, 'index'])->name('home');
 
@@ -35,7 +36,9 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/dashboard')->group(function () {
         Route::get('/', function () {
-            return view('dash-master');
+            return view('dash-component.dash-master');
         })->name('master');
+
+        Route::get('/beranda', [DashBerandaController::class, 'index'])->name('dash.home');
     });
 });

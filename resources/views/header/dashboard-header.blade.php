@@ -21,7 +21,7 @@
             </svg>
             <span class="font-semibold text-sm">Dashboard</span>
         </a>
-        <a href="{{ route('home') }}" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+        <a href="{{ route('dash.home') }}" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
             <!-- Ikon Rumah untuk Beranda -->
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M4 10v10h5v-6h6v6h5V10"></path>

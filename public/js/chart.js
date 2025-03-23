@@ -1,5 +1,6 @@
 
 window.onload = function () {
+    console.log('test')
     // Chart 1: Distribusi Penduduk Berdasarkan Usia
     var chart1 = new CanvasJS.Chart("chartUsia", {
         animationEnabled: true,

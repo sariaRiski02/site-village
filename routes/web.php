@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\adminController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [homeController::class, 'index'])->name('home');
 
 Route::get('/pemerintahan', function () {
     return view('gov');
@@ -27,4 +27,15 @@ Route::get('/layanan', function () {
 Route::prefix('/store')->group(function () {
     Route::view('/', 'store')->name('store');
 });
-Route::view('/test', 'test');
+
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/register', [adminController::class, 'register']);
+    Route::get('/login', [adminController::class, 'login']);
+
+    Route::prefix('/dashboard')->group(function () {
+        Route::get('/', function () {
+            return view('dash-master');
+        })->name('master');
+    });
+});

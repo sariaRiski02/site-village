@@ -1,4 +1,4 @@
-@extends('app.app')
+@extends('layouts.app')
 
 @section('main')
     <!-- Hero Section -->
@@ -206,6 +206,6 @@
 
 @push('script')
 <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-    <script src="//{{ request()->getHost() }}/js/chart.js"></script>
-    {{-- <script src="//{{ request()->getHost() }}/js/sidebar.js"></script> --}}
+    {{-- <script src="//{{ request()->getHost() }}/js/chart.js"></script> --}}
+    <script src="{{ asset('/js/chart.js') }}"></script>
 @endpush

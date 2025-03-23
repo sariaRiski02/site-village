@@ -1,4 +1,4 @@
-@extends('app.app')
+@extends('layouts.app')
 
 <style>
     .hero-image {

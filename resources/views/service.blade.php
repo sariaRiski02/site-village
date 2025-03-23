@@ -1,4 +1,4 @@
-@extends('app.app')
+@extends('layouts.app')
 
 @section('main')
     <div class="bg-sky-50 rounded-xl p-6 mb-8">

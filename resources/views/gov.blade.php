@@ -76,7 +76,9 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800">Ibu Maharani</h3>
                         <p class="text-[#071952] font-medium">Sekretaris Desa</p>
-                        <p class="text-gray-600 mt-2">Bertanggung jawab dalam administrasi dan manajemen pemerintahan desa.</p>
+                        <p class="text-gray-600 mt-2">
+                            Bertanggung jawab dalam administrasi dan manajemen pemerintahan desa.
+                        </p>
                     </div>
                 </div>
                 <!-- BPD -->
@@ -85,9 +87,13 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800">Bapak Riyanto</h3>
                         <p class="text-gray-600 font-medium">Ketua BPD</p>
-                        <p class="text-gray-600 mt-2">Memimpin Badan Permusyawaratan Desa yang mewakili aspirasi masyarakat.</p>
+                        <p class="text-gray-600 mt-2">
+                            Memimpin Badan Permusyawaratan Desa yang mewakili aspirasi masyarakat.
+                        </p>
                     </div>
                 </div>
+
+
             </div>
             <div class="text-center mt-8">
                 <a href="#" class="inline-block bg-[#071952] hover:bg-[#a3b9ff] text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Lihat Struktur Lengkap</a>

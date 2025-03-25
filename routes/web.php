@@ -1,29 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\homeController;
 use App\Http\Controllers\adminController;
-use App\Http\Controllers\DashBerandaController;
+use App\Http\Controllers\DashDemoController;
+use App\Http\Controllers\DashGeoController;
+use App\Http\Controllers\DashGovController;
+use App\Http\Controllers\DashHomeController;
+use App\Http\Controllers\DashMasterController;
+use App\Http\Controllers\DashNewsController;
+use App\Http\Controllers\DashServiceController;
+use App\Http\Controllers\DashStoreController;
 
-Route::get('/', [homeController::class, 'index'])->name('home');
-
-Route::get('/pemerintahan', function () {
-    return view('gov');
-})->name('gov');
-
-Route::get('/demografi', function () {
-    return view('demografy');
-})->name('demo');
-
-Route::get('/geografi', function () {
-    return view('geografy');
-})->name('geo');
-Route::get('/berita', function () {
-    return view('news');
-})->name('news');
-Route::get('/layanan', function () {
-    return view('service');
-})->name('service');
+Route::view('/', 'home')->name('home');
+Route::view('/pemerintahan', 'gov')->name('gov');
+Route::view('/demografi', 'demografy')->name('demo');
+Route::view('/geografi', 'geografy')->name('geo');
+Route::view('/berita', 'news')->name('news');
+Route::view('/layanan', 'service')->name('service');
 
 Route::prefix('/store')->group(function () {
     Route::view('/', 'store')->name('store');
@@ -35,10 +28,14 @@ Route::prefix('/admin')->group(function () {
     Route::get('/login', [adminController::class, 'login']);
 
     Route::prefix('/dashboard')->group(function () {
-        Route::get('/', function () {
-            return view('dash-component.dash-master');
-        })->name('master');
+        Route::get('/', [DashMasterController::class, 'index'])->name('master');
 
-        Route::get('/beranda', [DashBerandaController::class, 'index'])->name('dash.home');
+        Route::get('/beranda', [DashHomeController::class, 'index'])->name('dash.home');
+        Route::get('/pemerintahan', [DashGovController::class, 'index'])->name('dash.gov');
+        Route::get('/demografi', [DashDemoController::class, 'index'])->name('dash.demo');
+        Route::get('/geografi', [DashGeoController::class, 'index'])->name('dash.geo');
+        Route::get('/berita', [DashNewsController::class, 'index'])->name('dash.news');
+        Route::get('/service', [DashServiceController::class, 'index'])->name('dash.service');
+        Route::get('/store', [DashStoreController::class, 'index'])->name('dash.store');
     });
 });

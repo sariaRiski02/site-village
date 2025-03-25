@@ -96,7 +96,7 @@
 
             </div>
             <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-[#071952] hover:bg-[#a3b9ff] text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Lihat Struktur Lengkap</a>
+                <a href="{{ route('struct.gov') }}" class="inline-block bg-[#071952] hover:bg-[#a3b9ff] text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Lihat Struktur Lengkap</a>
             </div>
         </div>
     </section>
@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-[#071952] hover:bg-[#a3b9ff] text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Lihat Struktur Lengkap</a>
+                <a href="{{ route('struct.bpd') }}" class="inline-block bg-[#071952] hover:bg-[#a3b9ff] text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Lihat Struktur Lengkap</a>
             </div>
         </div>
     </section>

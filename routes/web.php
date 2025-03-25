@@ -10,6 +10,7 @@ use App\Http\Controllers\DashMasterController;
 use App\Http\Controllers\DashNewsController;
 use App\Http\Controllers\DashServiceController;
 use App\Http\Controllers\DashStoreController;
+use App\Http\Controllers\structureController;
 
 Route::view('/', 'home')->name('home');
 Route::view('/pemerintahan', 'gov')->name('gov');
@@ -17,6 +18,11 @@ Route::view('/demografi', 'demografy')->name('demo');
 Route::view('/geografi', 'geografy')->name('geo');
 Route::view('/berita', 'news')->name('news');
 Route::view('/layanan', 'service')->name('service');
+
+
+// structure 
+Route::get('/struktur-pemerintah', [structureController::class, 'pemerintah'])->name('struct.gov');
+Route::get('/struktur-bpd', [structureController::class, 'bpd'])->name('struct.bpd');
 
 Route::prefix('/store')->group(function () {
     Route::view('/', 'store')->name('store');

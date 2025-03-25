@@ -9,7 +9,7 @@
                 <input 
                     type="text" 
                     name="welcome_message" 
-                    placeholder="Enter welcome message" 
+                    placeholder="Masukan pesan selamat datang" 
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2
                     focus:ring-[#071952]"
                 >
@@ -22,7 +22,7 @@
                 >
                 <textarea 
                     name="description_message" 
-                    placeholder="Enter description message" 
+                    placeholder="Masukan deskripsi pesan selamat datang"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
                     focus:ring-[#071952] resize-none"
                     rows="4"
@@ -42,7 +42,7 @@
             <div id="section2" class="flex flex-col space-y-4">
             <textarea 
                 name="kades_message" 
-                placeholder="Enter message from the village head (Kades)" 
+                placeholder="Pesan dari kepala desa (Kades)" 
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
                 focus:ring-[#071952] resize-none"
                 rows="4"

@@ -18,7 +18,7 @@
         
     </style>
 </head>
-<body class="h-200">
+<body class="h-200 bg-gray-100">
 
     <div id="wrapper" class="font-sans px-1 duration-300 overflow-x-hidden">
 
@@ -30,7 +30,6 @@
     </div>
 
     @stack('script')
-
     <script src="{{ asset('js/dashboard-sidebar.js') }}"></script>
 
 </body>

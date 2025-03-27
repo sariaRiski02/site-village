@@ -1,8 +1,13 @@
-@extends('layouts.dashboard')
-
-@section('main')
-<div class="flex justify-center items-center">
-    <div class="container px-2 flex justify-center items-center flex-col w-full ">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Penduduk Desa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center">
+    <div class="container px-2 border flex justify-center items-center flex-col w-full py-8">
         <!-- Form Tambah Data -->
         <div class="w-full bg-white shadow-md rounded-lg p-6">
             <h1 class="text-2xl font-bold mb-6 text-center text-[#071952]">
@@ -277,5 +282,5 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</body>
+</html>

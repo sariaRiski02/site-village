@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class structureController extends Controller
 {
-    public function pemerintahan()
+    public function pemerintah()
     {
         return view('structure.structure-gov');
     }

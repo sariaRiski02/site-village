@@ -51,7 +51,7 @@
             </svg>
             <span class="font-semibold text-sm">Geografis</span>
         </a>
-        <a href="{{ Route::is('dash.news') }}" class="flex items-center p-3 {{ Route::is('dash.news') ? 'bg-gray-100' : ''}} hover:bg-gray-100 rounded-lg">
+        <a href="{{ route('dash.news') }}" class="flex items-center p-3 {{ Route::is('dash.news') ? 'bg-gray-100' : ''}} hover:bg-gray-100 rounded-lg">
             <!-- Ikon Berita/Koran untuk Berita -->
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16v14H4V5z"></path>
@@ -59,7 +59,7 @@
             </svg>
             <span class="font-semibold text-sm">Berita</span>
         </a>
-        <a href="{{ route('dash.service') }}" class="flex items-center p-3 {{ Route::is('dash.news') ? 'bg-gray-100' : ''}} hover:bg-gray-100 rounded-lg">
+        <a href="{{ route('dash.service') }}" class="flex items-center p-3 {{ Route::is('dash.service') ? 'bg-gray-100' : ''}} hover:bg-gray-100 rounded-lg">
             <!-- Ikon Informasi -->
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"></path>

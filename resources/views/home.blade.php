@@ -8,7 +8,7 @@
         <div class="flex flex-col justify-between w-full md:gap-8 gap-4">
             <span class="text-2xl md:text-4xl font-bold text-[#071952] text-center md:text-left">
                 Selamat Datang di situs  
-                <br>
+                <br> 
                 Desa Kema III –
             </span>
             <span class="text-md text-center md:text-left text-[#071952]">

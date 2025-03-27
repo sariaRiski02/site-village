@@ -45,3 +45,6 @@ Route::prefix('/admin')->group(function () {
         Route::get('/store', [DashStoreController::class, 'index'])->name('dash.store');
     });
 });
+
+
+Route::view('/test', 'test');

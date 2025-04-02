@@ -29,6 +29,6 @@
     
     @stack('script')
 
-    <script src="//{{ request()->getHost() }}/js/sidebar.js"></script>
+  <script src="{{ asset('js/sidebar.js') }}"></script>
   </body>
 </html>

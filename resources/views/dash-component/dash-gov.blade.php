@@ -2,52 +2,152 @@
 
 @section('main')
 <div class="container mx-auto px-4 py-6">
-    <h1 class="text-2xl font-bold mb-6 text-[#071952]">Edit struktur pemerintahan</h1>
 
+    <div class="mb-6 bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-4 text-[#071952]">Edit Sambutan</h2>
+        <form id="message-content-form" method="post" class="space-y-4" onsubmit="return false;">
+            @csrf
+            <div>
+                <label for="message-title" class="block text-sm font-medium text-gray-700 mb-2">Judul Sambutan</label>
+                <input 
+                    type="text" 
+                    id="message-title" 
+                    name="message_title" 
+                    placeholder="Masukkan judul sambutan" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                    focus:outline-none focus:ring-2 focus:ring-[#071952]"
+                    required
+                >
+            </div>
+            <div>
+                <label for="message-body" class="block text-sm font-medium text-gray-700 mb-2">Isi Konten Sambutan</label>
+                <textarea 
+                    id="message-body" 
+                    name="message_body" 
+                    placeholder="Masukkan isi konten sambutan" 
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                    focus:outline-none focus:ring-2 focus:ring-[#071952]"
+                    required
+                ></textarea>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button 
+                    type="reset" 
+                    class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg 
+                    hover:bg-gray-300 focus:outline-none focus:ring-2 
+                    focus:ring-gray-400 focus:ring-offset-2"
+                >
+                    Atur Ulang
+                </button>
+                <button 
+                    type="submit" 
+                    id="update-message-btn"
+                    class="px-4 py-2 bg-[#071952] text-white rounded-lg 
+                    hover:bg-[#2a3352] focus:outline-none focus:ring-2 
+                    focus:ring-[#071952] focus:ring-offset-2"
+                >
+                    Perbarui Sambutan
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mb-6 bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-4 text-[#071952]">Edit Sejarah</h2>
+        <form id="history-form" method="post" class="space-y-4" onsubmit="return false;">
+            @csrf
+            <div>
+                <label for="history-title" class="block text-sm font-medium text-gray-700 mb-2">Judul Sejarah</label>
+                <input 
+                    type="text" 
+                    id="history-title" 
+                    name="history_title" 
+                    placeholder="Masukkan judul sejarah" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                    focus:outline-none focus:ring-2 focus:ring-[#071952]"
+                    required
+                >
+            </div>
+            <div>
+                <label for="history-body" class="block text-sm font-medium text-gray-700 mb-2">Isi Sejarah</label>
+                <textarea 
+                    id="history-body" 
+                    name="history_body" 
+                    placeholder="Masukkan isi sejarah" 
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg 
+                    focus:outline-none focus:ring-2 focus:ring-[#071952]"
+                    required
+                ></textarea>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button 
+                    type="reset" 
+                    class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg 
+                    hover:bg-gray-300 focus:outline-none focus:ring-2 
+                    focus:ring-gray-400 focus:ring-offset-2"
+                >
+                    Atur Ulang
+                </button>
+                <button 
+                    type="submit" 
+                    id="update-history-btn"
+                    class="px-4 py-2 bg-[#071952] text-white rounded-lg 
+                    hover:bg-[#2a3352] focus:outline-none focus:ring-2 
+                    focus:ring-[#071952] focus:ring-offset-2"
+                >
+                    Perbarui Sejarah
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <h1 class="text-2xl font-bold mb-6 text-[#071952]">Edit Struktur Pemerintahan</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Organizational Chart Form -->
+        <!-- Form Struktur Organisasi -->
         <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-xl font-semibold mb-4 text-[#071952]">Add/Edit Organizational Structure</h2>
+            <h2 class="text-xl font-semibold mb-4 text-[#071952]">Tambah/Edit Struktur Organisasi</h2>
             <form id="org-chart-node-form" method="post" class="space-y-4" enctype="multipart/form-data" onsubmit="return false;">
                 @csrf
                 <input type="hidden" id="node-id" name="node_id">
                 <div>
-                    <label for="node-name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                    <label for="node-name" class="block text-sm font-medium text-gray-700 mb-2">Nama</label>
                     <input 
                         type="text" 
                         id="node-name" 
                         name="name" 
-                        placeholder="Enter name" 
+                        placeholder="Masukkan nama" 
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg 
                         focus:outline-none focus:ring-2 focus:ring-[#071952]"
                         required
                     >
                 </div>
                 <div>
-                    <label for="node-title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                    <label for="node-title" class="block text-sm font-medium text-gray-700 mb-2">Jabatan</label>
                     <input 
                         type="text" 
                         id="node-title" 
                         name="title" 
-                        placeholder="Enter job title" 
+                        placeholder="Masukkan jabatan" 
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg 
                         focus:outline-none focus:ring-2 focus:ring-[#071952]"
                         required
                     >
                 </div>
                 <div>
-                    <label for="node-parent" class="block text-sm font-medium text-gray-700 mb-2">Parent Node</label>
+                    <label for="node-parent" class="block text-sm font-medium text-gray-700 mb-2">Induk Node</label>
                     <select 
                         id="node-parent" 
                         name="parent_id" 
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg 
                         focus:outline-none focus:ring-2 focus:ring-[#071952]"
                     >
-                        <option value="">Select Parent (Optional)</option>
+                        <option value="">Pilih Induk (Opsional)</option>
                     </select>
                 </div>
                 <div>
-                    <label for="node-image" class="block text-sm font-medium text-gray-700 mb-2">Profile Image</label>
+                    <label for="node-image" class="block text-sm font-medium text-gray-700 mb-2">Foto Profil</label>
                     <input 
                         type="file" 
                         id="node-image" 
@@ -69,7 +169,7 @@
                         hover:bg-[#2a3352] focus:outline-none focus:ring-2 
                         focus:ring-[#071952] focus:ring-offset-2"
                     >
-                        Add Node
+                        Tambah Node
                     </button>
                     <button 
                         type="button" 
@@ -78,22 +178,22 @@
                         hover:bg-gray-300 focus:outline-none focus:ring-2 
                         focus:ring-gray-400 focus:ring-offset-2 hidden"
                     >
-                        Cancel
+                        Batal
                     </button>
                 </div>
             </form>
         </div>
 
-        <!-- Organizational Chart Preview -->
+        <!-- Pratinjau Struktur Organisasi -->
         <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-xl font-semibold mb-4 text-[#071952]">Organizational Chart Preview</h2>
+            <h2 class="text-xl font-semibold mb-4 text-[#071952]">Pratinjau Struktur Organisasi</h2>
             <div id="chart-container" class="w-full h-[500px] overflow-auto">
-                <!-- Org Chart will be rendered here -->
+                <!-- Struktur Organisasi akan dirender di sini -->
             </div>
         </div>
     </div>
 
-    <!-- Save and Reset Buttons -->
+    <!-- Tombol Simpan dan Atur Ulang -->
     <div class="flex justify-end mt-6 space-x-4">
         <button 
             id="reset-chart-btn"
@@ -101,7 +201,7 @@
             hover:bg-gray-300 focus:outline-none focus:ring-2 
             focus:ring-gray-400 focus:ring-offset-2"
         >
-            Reset Chart
+            Atur Ulang Struktur
         </button>
         <button 
             id="save-chart-btn"
@@ -109,7 +209,7 @@
             hover:bg-[#2a3352] focus:outline-none focus:ring-2 
             focus:ring-[#071952] focus:ring-offset-2"
         >
-            Save Organizational Chart
+            Simpan Struktur Organisasi
         </button>
     </div>
 </div>

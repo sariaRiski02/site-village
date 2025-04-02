@@ -30,8 +30,8 @@ Route::prefix('/store')->group(function () {
 
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/register', [adminController::class, 'register']);
-    Route::get('/login', [adminController::class, 'login']);
+    Route::get('/register', [adminController::class, 'register'])->name('register');
+    Route::get('/login', [adminController::class, 'login'])->name('login');
 
     Route::prefix('/dashboard')->group(function () {
         Route::get('/', [DashMasterController::class, 'index'])->name('master');

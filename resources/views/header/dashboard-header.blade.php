@@ -35,6 +35,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21V13h6v8"></path>
             </svg>
             <span class="font-semibold text-sm">Pemerintahan</span>
+            
         </a>
         <a href="{{ route('dash.demo') }}" class="flex items-center p-3 {{ Route::is('dash.demo') ? 'bg-gray-100' : ''}} hover:bg-gray-100 rounded-lg">
             <!-- Ikon Orang untuk Demografi -->
@@ -73,7 +74,16 @@
             </svg>
             <span class="font-semibold text-sm">store</span>
         </a>
+        <button class="cursor-pointer flex items-center p-3 bg-red-500 text-white hover:bg-red-600 rounded-lg w-full text-left" onclick="confirm('apakah kamu mau keluar?')">
+            <!-- Ikon Keluar -->
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21V3h12v18M9 9h6"></path>
+            </svg>
+            <span class="font-semibold text-sm">Keluar</span>
+        </button>
 
+        
+        
     </div>
 
     <div id="container" class="fixed w-full px-2 z-50">

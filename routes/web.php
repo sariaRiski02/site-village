@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\adminController;
-use App\Http\Controllers\DashDemoController;
 use App\Http\Controllers\DashGeoController;
 use App\Http\Controllers\DashGovController;
+use App\Http\Controllers\DashDemoController;
 use App\Http\Controllers\DashHomeController;
-use App\Http\Controllers\DashMasterController;
 use App\Http\Controllers\DashNewsController;
-use App\Http\Controllers\DashServiceController;
 use App\Http\Controllers\DashStoreController;
 use App\Http\Controllers\structureController;
+use App\Http\Controllers\DashMasterController;
+use App\Http\Controllers\DashServiceController;
 
-Route::view('/', 'home')->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::view('/pemerintahan', 'gov')->name('gov');
 Route::view('/demografi', 'demografy')->name('demo');
 Route::view('/geografi', 'geografy')->name('geo');
@@ -37,6 +38,8 @@ Route::prefix('/admin')->group(function () {
         Route::get('/', [DashMasterController::class, 'index'])->name('master');
 
         Route::get('/beranda', [DashHomeController::class, 'index'])->name('dash.home');
+        Route::post('/beranda', [DashHomeController::class, 'update'])->name('dash.home.add');
+
         Route::get('/pemerintahan', [DashGovController::class, 'index'])->name('dash.gov');
         Route::get('/demografi', [DashDemoController::class, 'index'])->name('dash.demo');
         Route::get('/geografi', [DashGeoController::class, 'index'])->name('dash.geo');

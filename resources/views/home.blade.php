@@ -12,11 +12,15 @@
                 Desa Kema III –
             </span>
             <span class="text-md text-center md:text-left text-[#071952]">
-                Kami dengan bangga menyambut Anda di situs resmi Desa Kema III. Di sini, Anda dapat menemukan informasi terkini tentang pemerintahan, demografi, geografis, dan berita terbaru dari desa kami. Selamat menjelajah!
+                @if ($data->welcome_message)
+                    "{{ $data->welcome_message }}"
+                @else
+                    Kami dengan bangga menyambut Anda di situs resmi Desa Kema III. Di sini, Anda dapat menemukan informasi terkini tentang pemerintahan, demografi, geografis, dan berita terbaru dari desa kami. Selamat menjelajah!
+                @endif
             </span>
         </div>
         <div class="w-full">
-            <img src="{{ asset('images/hero.png') }}" alt="Desa Kema III" class="rounded-lg shadow-lg w-full h-auto">
+            <img src="{{ asset('/images/'.$data->hero_image) }}" alt="Desa Kema III" class="rounded-lg shadow-lg w-full h-auto">
         </div>
     </section>
 
@@ -81,11 +85,16 @@
     <!-- lead of village -->
     <div class="flex item-center gap-5 h-auto w-full  justify-center">
         <div class="w-2/3">
-        <img src="{{ asset('images/kades.png') }}" alt="Leader" class="">
+        <img src="{{ asset('images/' . $data->kades_image) }}" alt="Leader" class="">
         </div>
         <div class="flex items-center">
             <p class="md:text-md text-sm w-full text-[#071952] ">
-                "Semangat gotong royong yang kuat di Desa Kema III adalah bukti nyata dari kebersamaan dan kerja sama antar masyarakat. Setiap warga desa berperan aktif dalam berbagai kegiatan, mulai dari pembangunan infrastruktur hingga acara-acara sosial. Dengan semangat gotong royong, kita dapat mencapai kemajuan dan kesejahteraan bersama.
+                @if ($data->kades_message)
+                    "{{ $data->kades_message }}"
+                @else
+                    "Semangat gotong royong yang kuat di Desa Kema III adalah bukti nyata dari kebersamaan dan kerja sama antar masyarakat. Setiap warga desa berperan aktif dalam berbagai kegiatan, mulai dari pembangunan infrastruktur hingga acara-acara sosial. Dengan semangat gotong royong, kita dapat mencapai kemajuan dan kesejahteraan bersama."
+                @endif
+                
             <br><br>
             --- Kepala desa kema 3 ---
 

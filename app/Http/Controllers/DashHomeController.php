@@ -18,7 +18,8 @@ class DashHomeController extends Controller
 
     public function index()
     {
-        return view('dash-component.dash-home');
+        $isHidden = Home::latest()->first()->is_bumdes ?? true;
+        return view('dash-component.dash-home', compact('isHidden'));
     }
 
     public function update(Request $request)
@@ -32,8 +33,8 @@ class DashHomeController extends Controller
             'kades_message' => 'nullable|string'
         ]);
 
-        $name_hero_image = $validated['hero_image'] ? time() . 'hero.' .  $validated['hero_image']->extension() : '';
-        $name_kades_image = $validated['kades_image'] ? time() . 'kades.' . $validated['kades_image']->extension() : '';
+        $name_hero_image = isset($validated['hero_image'])  ? time() . 'hero.' .  $validated['hero_image']->extension() : '';
+        $name_kades_image = isset($validated['kades_image']) ? time() . 'kades.' . $validated['kades_image']->extension() : '';
 
         if (!Home::first()) {
 
@@ -66,6 +67,17 @@ class DashHomeController extends Controller
         ])->filter()->toArray();
 
         $home->update($data);
+        return redirect()->back();
+    }
+
+
+
+    public function toggle_bumdes(Request $request)
+    {
+        $home = Home::first();
+        $home->is_bumdes = $request->has('is_hidden');
+        $home->save();
+
         return redirect()->back();
     }
 }

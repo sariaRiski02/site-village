@@ -21,7 +21,7 @@ class HomeFactory extends Factory
             'hero_image' => 'hero.png',
             'kades_image' => 'kades.png',
             'welcome_message' => fake()->text,
-            'kades_message' => fake()->text
+            'kades_message' => fake()->text,
         ];
     }
 }

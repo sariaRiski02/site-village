@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('kades_image')->nullable();
             $table->text('welcome_message')->nullable();
             $table->text('kades_message')->nullable();
+            $table->boolean('is_bumdes')->default(true);
             $table->timestamps();
         });
     }

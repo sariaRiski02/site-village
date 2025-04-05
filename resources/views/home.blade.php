@@ -20,14 +20,16 @@
             </span>
         </div>
         <div class="w-full">
-            <img src="{{ asset('/images/'.$data->hero_image) }}" alt="Desa Kema III" class="rounded-lg shadow-lg w-full h-auto">
+            <img src="{{ asset('/images/'.$data->hero_image ?? $default_hero) }}" alt="Desa Kema III" class="rounded-lg shadow-lg w-full h-auto">
         </div>
     </section>
 
     <!-- BUMDes Section -->
+    @if ($data->is_bumdes)
+        
     <section id="bumdes" class="flex flex-col md:flex-row items-center w-full justify-between gap-5 bg-sky-50 p-6 rounded-lg shadow-sm">
         <div class="w-full md:w-1/2">
-            <img src="{{ asset('images/hero.png') }}" alt="BUMDes Kema III" class="rounded-lg shadow-lg w-full h-auto">
+            <img src="{{ asset('images/'.$default_hero) }}" alt="BUMDes Kema III" class="rounded-lg shadow-lg w-full h-auto">
         </div>
         <div class="flex flex-col justify-between w-full md:w-1/2 md:gap-8 gap-4">
             <h2 class="text-2xl md:text-3xl font-bold text-[#071952]">BUMDes Kema III</h2>
@@ -80,12 +82,13 @@
             <a href="#" class="bg-[#071952] text-white px-6 py-2 rounded-lg mt-3 inline-block w-fit hover:bg-blue-900 transition">Lihat aplikasi</a>
         </div>
     </section>
+    @endif
 
 
     <!-- lead of village -->
     <div class="flex item-center gap-5 h-auto w-full  justify-center">
         <div class="w-2/3">
-        <img src="{{ asset('images/' . $data->kades_image) }}" alt="Leader" class="">
+        <img src="{{ asset('images/' . $data->kades_image ?? $default_kades) }}" alt="Leader" class="">
         </div>
         <div class="flex items-center">
             <p class="md:text-md text-sm w-full text-[#071952] ">

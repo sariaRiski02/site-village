@@ -39,6 +39,7 @@ Route::prefix('/admin')->group(function () {
 
         Route::get('/beranda', [DashHomeController::class, 'index'])->name('dash.home');
         Route::post('/beranda', [DashHomeController::class, 'update'])->name('dash.home.add');
+        Route::post('/toggle-bumdes', [DashHomeController::class, 'toggle_bumdes'])->name('toggle.bumdes');
 
         Route::get('/pemerintahan', [DashGovController::class, 'index'])->name('dash.gov');
         Route::get('/demografi', [DashDemoController::class, 'index'])->name('dash.demo');

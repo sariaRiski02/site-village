@@ -24,6 +24,29 @@
         </div>
     </section>
 
+
+     <!-- lead of village -->
+     <div class="flex item-center gap-5 h-auto w-full  justify-center">
+        <div class="w-2/3">
+        <img src="{{ asset('images/' . $data->kades_image ?? $default_kades) }}" alt="Leader" class="">
+        </div>
+        <div class="flex items-center">
+            <p class="md:text-md text-sm w-full text-[#071952] ">
+                @if ($data->kades_message)
+                    "{{ $data->kades_message }}"
+                @else
+                    "Semangat gotong royong yang kuat di Desa Kema III adalah bukti nyata dari kebersamaan dan kerja sama antar masyarakat. Setiap warga desa berperan aktif dalam berbagai kegiatan, mulai dari pembangunan infrastruktur hingga acara-acara sosial. Dengan semangat gotong royong, kita dapat mencapai kemajuan dan kesejahteraan bersama."
+                @endif
+                
+            <br><br>
+            --- Kepala desa kema 3 ---
+
+            </p>
+        </div>
+    </div>
+
+
+
     <!-- BUMDes Section -->
     @if ($data->is_bumdes)
         
@@ -85,26 +108,7 @@
     @endif
 
 
-    <!-- lead of village -->
-    <div class="flex item-center gap-5 h-auto w-full  justify-center">
-        <div class="w-2/3">
-        <img src="{{ asset('images/' . $data->kades_image ?? $default_kades) }}" alt="Leader" class="">
-        </div>
-        <div class="flex items-center">
-            <p class="md:text-md text-sm w-full text-[#071952] ">
-                @if ($data->kades_message)
-                    "{{ $data->kades_message }}"
-                @else
-                    "Semangat gotong royong yang kuat di Desa Kema III adalah bukti nyata dari kebersamaan dan kerja sama antar masyarakat. Setiap warga desa berperan aktif dalam berbagai kegiatan, mulai dari pembangunan infrastruktur hingga acara-acara sosial. Dengan semangat gotong royong, kita dapat mencapai kemajuan dan kesejahteraan bersama."
-                @endif
-                
-            <br><br>
-            --- Kepala desa kema 3 ---
-
-            </p>
-        </div>
-    </div>
-
+   
 
     <!-- cart berita -->
     <section id="news" class="flex flex-col gap-5"></section>

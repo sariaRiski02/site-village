@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Ads;
+use App\Models\PointAds;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class AdsSeeder extends Seeder
 {
@@ -12,6 +14,7 @@ class AdsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Ads::factory(3)->create();
+        PointAds::factory(5)->create();
     }
 }

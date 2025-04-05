@@ -16,7 +16,7 @@ class Ads extends Model
 
 
 
-    public function pointAds()
+    public function PointAds()
     {
         return $this->hasMany(PointAds::class, 'ads_id', 'id');
     }

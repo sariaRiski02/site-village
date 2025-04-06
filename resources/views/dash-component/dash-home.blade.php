@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="flex flex-wrap justify-end gap-4 mt-4">
                                     {{-- button add point --}}
-                                    <a href="{{ route('ads.add.point', $ads->id) }}"
+                                    <a href="{{ route('ads.point.add', $ads->id) }}"
                                         class="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
                                         Tambah Poin
                                     </a>

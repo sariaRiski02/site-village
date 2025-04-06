@@ -52,7 +52,7 @@ Route::prefix('/admin')->group(function () {
         Route::post('/ads-add', [AdsController::class, 'ads_add'])->name('ads.add');
         Route::delete('/ads-delete/{id}', [AdsController::class, 'ads_delete'])->name('ads.delete');
         Route::put('/ads-publish/{id}', [AdsController::class, 'is_publish'])->name('ads.publish');
-        Route::get('/ads-add-point/{id}', [AdsController::class, 'add_ads_point'])->name('ads.add.point');
+        Route::get('/ads-add-point/{id}', [AdsController::class, 'ads_point_add'])->name('ads.point.add');
     });
 });
 

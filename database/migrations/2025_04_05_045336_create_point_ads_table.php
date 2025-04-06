@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('point_ads', function (Blueprint $table) {
             $table->id();
             $table->text('point');
-            $table->foreignId('ads_id')->references('id')->on('ads');
+            $table->foreignId('ads_id')->references('id')->on('ads')->onDelete('cascade');
             $table->timestamps();
         });
     }

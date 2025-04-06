@@ -14,7 +14,7 @@ class AdsTest extends TestCase
      */
     public function test_example(): void
     {
-        $ads = Ads::first();
-        $this->assertNotNull($ads->PointAds());
+        $ads = Ads::all()->first();
+        $this->assertNotNull($ads->PointAds);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ads;
 use App\Models\Home;
 use App\Service\ServiceFile;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class DashHomeController extends Controller
     public function index()
     {
         $isHidden = Home::latest()->first()->is_bumdes ?? true;
-        return view('dash-component.dash-home', compact('isHidden'));
+        $adses = Ads::all();
+        return view('dash-component.dash-home', compact('isHidden', 'adses'));
     }
 
     public function update(Request $request)

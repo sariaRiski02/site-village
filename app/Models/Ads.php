@@ -20,4 +20,13 @@ class Ads extends Model
     {
         return $this->hasMany(PointAds::class, 'ads_id', 'id');
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->is_publish = false;
+        });
+    }
 }

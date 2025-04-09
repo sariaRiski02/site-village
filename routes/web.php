@@ -53,6 +53,10 @@ Route::prefix('/admin')->group(function () {
         Route::delete('/ads-delete/{id}', [AdsController::class, 'ads_delete'])->name('ads.delete');
         Route::put('/ads-publish/{id}', [AdsController::class, 'is_publish'])->name('ads.publish');
         Route::get('/ads-add-point/{id}', [AdsController::class, 'ads_point_add'])->name('ads.point.add');
+
+        // test API
+
+        Route::get('/ads-ads', [AdsController::class, 'ads_api']);
     });
 });
 

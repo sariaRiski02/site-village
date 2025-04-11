@@ -46,7 +46,7 @@ class AdsController extends Controller
     }
 
 
-    public function ads_api()
+    public function get_ads()
     {
         return AdsResource::collection(Ads::all());
     }

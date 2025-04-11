@@ -94,12 +94,10 @@
                 <div id="ads_container" class="space-y-6">
                     <p class="text-sm text-gray-600">Pastikan klik simpan setelah mengisi formulir iklan agar data tidak hilang saat halaman dimuat ulang.</p>
 
-                    @foreach ($adses as $ads)
-
                     <div class="ad_item border border-gray-300 rounded-lg">
                         <div class="ad_header flex justify-between items-center p-4 bg-gray-100 cursor-pointer" onclick="toggleAdDetails(this)">
                             <h2 class="text-lg font-semibold text-gray-700">
-                                {{ $ads->title ?? 'iklan - '.$loop->iteration }}
+                                Tugas 1
                             </h2>
                             <span class="toggle-icon">+</span>
                         </div>
@@ -148,12 +146,11 @@
                                 </div>
                                 <div id="points_container_0" class="space-y-2 my-2">
                                     {{-- point item --}}
-                                    @foreach ($ads->PointAds as $PointAds)
                                         <div class="point_item flex items-center gap-4">
                                                 <input 
                                                     type="text" 
-                                                    name="{{ $loop->index }}" 
-                                                    value="{{ $PointAds->point }}"
+                                                    name="" 
+                                                    value=""
                                                     placeholder="Masukkan poin penting" 
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm"
                                                 >
@@ -165,11 +162,10 @@
                                                     Hapus
                                                 </button>
                                         </div>
-                                    @endforeach
                                 </div>
                                 <div class="flex flex-wrap justify-end gap-4 mt-4">
                                     {{-- button add point --}}
-                                    <a href="{{ route('ads.point.add', $ads->id) }}"
+                                    <a href=""
                                         class="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
                                         Tambah Poin
                                     </a>
@@ -187,7 +183,7 @@
                             <div class="flex flex-row gap-4 flex-wrap">
 
                                 {{-- delete ads --}}
-                                <form action="{{ route('ads.delete', $ads->id) }}" method="POST" class="inline w-full">
+                                <form action="" method="POST" class="inline w-full">
                                     @csrf
                                     @method('DELETE')
                                     <button 
@@ -198,7 +194,7 @@
                                 </form>
 
                                 {{-- publish ads --}}
-                                <form action="{{ route('ads.publish', $ads->id) }}" method="POST" class="inline w-full">
+                                <form action="" method="POST" class="inline w-full">
                                     @csrf
                                     @method('PUT')
                                     <button 
@@ -211,7 +207,7 @@
                         </div>
                     </div>
 
-                    @endforeach
+                    
                 </div>
             </form>
         </div>

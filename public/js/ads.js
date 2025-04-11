@@ -144,3 +144,18 @@ function removePoint(button) {
     const pointItem = button.closest('.point_item');
     pointItem.remove();
 }
+
+
+
+$(document).ready(function (){
+    $.ajax({
+        url: '/api/ads',
+        method: 'GET',
+        success: function (response){
+            console.log(response);
+            response.forEach(function(ads){
+                addAd();
+            })
+        }
+    })
+});

@@ -31,7 +31,6 @@
                 </div>
                 <div class="ad_details hidden flex-col gap-4 p-4">
                     <form id="myform" method="POST">
-                            
                         <div class="flex flex-col gap-2">
                             <label for="ads[0][title]" class="text-sm text-gray-600">
                                 Masukkan judul iklan
@@ -111,6 +110,7 @@
                     </form>
 
                     <hr class="w-full border-t border-gray-300 my-4">
+                    
                     <div class="flex flex-row gap-4 flex-wrap">
 
                         {{-- delete ads --}}

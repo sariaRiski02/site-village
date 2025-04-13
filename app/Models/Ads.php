@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\PointAds;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -27,6 +28,10 @@ class Ads extends Model
 
         static::creating(function ($model) {
             $model->is_publish = false;
+        });
+
+        static::creating(function ($model) {
+            $model->slug = Str::slug($model->title);
         });
     }
 }

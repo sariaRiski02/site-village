@@ -74,11 +74,11 @@
         </div>
 
 
-        {{-- form papan iklan --}}
 
         <div id="ads_section" class="flex flex-col gap-5 justify-center mt-5 bg-white shadow-lg rounded-lg p-5">
             <div class="p-5 flex justify-between items-center">
             <h1 class="text-xl font-bold text-[#071952]">Atur Papan Iklan</h1>
+            {{-- button tambah iklan --}}
             <form action="{{ route('ads.add') }}" method="POST" class="inline">
                 @csrf
                 <button 
@@ -88,9 +88,6 @@
                 </button>
             </form>
             </div>
-
-            <form action="" method="POST" enctype="multipart/form-data" id="ads_form">
-                @csrf
                 <div id="ads_container" class="space-y-6">
                     <p class="text-sm text-gray-600">Pastikan klik simpan setelah mengisi formulir iklan agar data tidak hilang saat halaman dimuat ulang.</p>
 
@@ -104,34 +101,35 @@
                             <span class="toggle-icon">+</span>
                         </div>
                         <div class="ad_details hidden flex-col gap-4 p-4">
-                            <form id="myform" method="POST">
-                                    
+                            <form id="myform" method="POST" action="{{ route('ads.update',$ads->id) }}" class="flex flex-col gap-2">
+                                @method('PUT')
+                                @csrf
                                 <div class="flex flex-col gap-2">
                                     <label for="ads[0][title]" class="text-sm text-gray-600">
                                         Masukkan judul iklan
                                     </label>
                                     <input 
                                         type="text" 
-                                        name="ads[0][title]" 
+                                        name="title" 
                                         placeholder="Masukkan judul iklan" 
                                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm"
                                     >
                                 </div>
                                 <input 
                                     type="file" 
-                                    name="ads[0][image]" 
+                                    name="image" 
                                     accept="image/*" 
                                     class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-gray-300 file:text-gray-700 file:bg-gray-100 hover:file:bg-gray-200 shadow-sm"
                                 >
                                 <textarea 
-                                    name="ads[0][description]" 
+                                    name="description" 
                                     placeholder="Masukkan deskripsi iklan" 
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
                                     focus:ring-blue-500 bg-white shadow-sm resize-none"
                                     rows="4"
                                 ></textarea>
                                 <textarea 
-                                    name="ads[0][sub_description]" 
+                                    name="sub_description" 
                                     placeholder="Masukkan sub deskripsi iklan" 
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
                                     focus:ring-blue-500 bg-white shadow-sm resize-none"
@@ -141,10 +139,9 @@
                                     <label for="ads[0][link]" class="text-sm text-gray-600">Masukkan link (bisa berupa link WhatsApp, sosial media, email, dll.)</label>
                                     <input 
                                         type="url" 
-                                        name="ads[0][link]" 
+                                        name="link" 
                                         placeholder="Masukkan link" 
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm"
-                                    >
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm">
                                 </div>
                                 <div id="points_container_0" class="space-y-2 my-2">
                                     {{-- point item --}}
@@ -170,13 +167,13 @@
                                 <div class="flex flex-wrap justify-end gap-4 mt-4">
                                     {{-- button add point --}}
                                     <a href="{{ route('ads.add.point', $ads->id) }}"
-                                        class="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+                                        class="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 lg:w-auto w-full text-center">
                                         Tambah Poin
                                     </a>
                                     {{-- save ads --}}
                                     <button 
                                         type="submit" 
-                                        class="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                                        class="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 lg:w-auto w-full">
                                         Simpan Iklan
                                     </button>
                                 </div>
@@ -213,7 +210,7 @@
 
                     @endforeach
                 </div>
-            </form>
+            
         </div>
 
        <script src="{{ asset('js/ads.js') }}"></script>

@@ -17,10 +17,11 @@ class AdsFactory extends Factory
     public function definition(): array
     {
         return [
-            'title_ads' => fake()->word,
+            'title' => fake()->word,
+            // 'slug' => fake()->slug,
             'description' => fake()->text,
             'sub_description' => fake()->text,
-            'image_ads' => fake()->url,
+            'image' => fake()->url,
             'link' => fake()->url
         ];
     }

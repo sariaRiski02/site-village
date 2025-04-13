@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
-            $table->string('title_ads')->nullable();
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable()->unique();
             $table->text('description')->nullable();
             $table->text('sub_description')->nullable();
-            $table->string('image_ads')->nullable();
+            $table->string('image')->nullable();
             $table->string('link')->nullable();
             $table->boolean('is_publish')->defatul(false);
             $table->timestamps();

@@ -13,7 +13,7 @@ class AdsController extends Controller
     public function ads_add()
     {
         Ads::create();
-        return redirect()->route('dash.home');
+        return redirect()->route('dash.home',);
     }
 
 

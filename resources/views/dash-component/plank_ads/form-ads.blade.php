@@ -21,7 +21,7 @@
 
             {{-- list containerT --}}
 
-            <!-- 
+            
             <div class="ad_item border border-gray-300 rounded-lg" id="boxAds_[id]">
                 <div class="ad_header flex justify-between items-center p-4 bg-gray-100 cursor-pointer" onclick="toggleAdDetails(this)">
                     <h2 id="title_ads" class="text-lg font-semibold text-gray-700">
@@ -110,7 +110,7 @@
                     </form>
 
                     <hr class="w-full border-t border-gray-300 my-4">
-                    
+
                     <div class="flex flex-row gap-4 flex-wrap">
 
                         {{-- delete ads --}}
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            -->
+            
             
         </div>
     </form>

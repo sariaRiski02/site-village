@@ -14,7 +14,7 @@ function toggleAdDetails(header) {
 }
 
 function addPoint(adIndex) {
-    addPointApi();
+    addPointApi(adIndex);
     const pointsContainer = document.getElementById(`points_container_${adIndex}`);
     const pointItem = document.createElement('div');
     pointItem.className = 'point_item flex items-center gap-4';
@@ -44,9 +44,9 @@ function removePoint(button) {
 }
 
 
-function addPointApi(){
+function addPointApi(id){
     $.ajax({
-        'url' : '/add-point',
+        'url' : '/api/add-point/' + id,
         'method': 'POST',
         'data' : {},
         'response': function(response){

@@ -101,7 +101,17 @@ class AdsController extends Controller
 
     public function add_point($id)
     {
-        $result = Ads::where('id', $id)->first()->PointAdd->create();
+        $ads = Ads::where('id', $id)->first();
+        if (!$ads) {
+            return response()->json([
+                'status' => 'failed',
+                'message' => 'iklan tidak ditemukan'
+            ], 404);
+        }
+
+        $result = $ads->PointAds()->create([
+            'point' => ''
+        ]);
         if (!$result) {
             return response()->json([
                 'status' => 'failed',

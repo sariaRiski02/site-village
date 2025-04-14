@@ -2,6 +2,47 @@
 
 @section('main')
 
+{{-- alert notification jika ada perubahan data --}}
+@session('success')
+    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-4 bg-green-100 border border-green-400 text-green-700 rounded-lg shadow-xl z-50 w-3/4 max-w-4xl" role="alert">
+        <div class="flex items-center">
+            <svg class="w-8 h-8 mr-3 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+                <strong class="font-bold text-lg">Sukses!</strong>
+                <p class="block sm:inline text-base">{{ session('success') }}</p>
+            </div>
+        </div>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="this.parentElement.style.display='none'">
+            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
+            </svg>
+        </span>
+    </div>
+@endsession
+
+@session('error')
+    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-4 bg-red-100 border border-red-400 text-red-700 rounded-lg shadow-xl z-50 w-3/4 max-w-4xl" role="alert">
+        <div class="flex items-center">
+            <svg class="w-8 h-8 mr-3 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div>
+                <strong class="font-bold text-lg">Error!</strong>
+                <p class="block sm:inline text-base">{{ session('error') }}</p>
+            </div>
+        </div>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="this.parentElement.style.display='none'">
+            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
+            </svg>
+        </span>
+    </div>
+@endsession
+
     <div class="p-6 bg-gray-100 rounded-lg shadow-md">
         
         <form action="{{ route('dash.home.add') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
@@ -9,49 +50,62 @@
 
             {{-- Section 1: Hero and Welcome Message --}}
             <div id="section1" class="flex flex-col space-y-4">
-                <input 
-                    type="file" 
-                    accept="image/*" 
-                    name="hero_image" 
-                    id="hero" 
-                    class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-gray-300 file:text-gray-700 file:bg-gray-100 hover:file:bg-gray-200 shadow-sm"
-                >
-                <textarea 
-                    name="welcome_message" 
-                    placeholder="Masukan deskripsi pesan selamat datang"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
-                    focus:ring-blue-500 resize-none bg-white shadow-sm"
-                    rows="4"
-                ></textarea>
+            <input 
+                type="file" 
+                accept="image/*" 
+                name="hero_image" 
+                id="hero" 
+                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-gray-300 file:text-gray-700 file:bg-gray-100 hover:file:bg-gray-200 shadow-sm"
+            >
+            @error('hero_image')
+                <p class="text-sm text-red-500">{{ $message }}</p>
+            @enderror
+
+            <textarea 
+                name="welcome_message" 
+                placeholder="Masukan deskripsi pesan selamat datang"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
+                focus:ring-blue-500 resize-none bg-white shadow-sm"
+                rows="4"
+            ></textarea>
+            @error('welcome_message')
+                <p class="text-sm text-red-500">{{ $message }}</p>
+            @enderror
             </div>
 
             {{-- Foto Kades --}}
             <div id="section3" class="flex flex-col space-y-4">
-                <input 
-                    type="file" 
-                    accept="image/*" 
-                    name="kades_image" 
-                    id="kades_photo" 
-                    class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-gray-300 file:text-gray-700 file:bg-gray-100 hover:file:bg-gray-200 shadow-sm"
-                >
+            <input 
+                type="file" 
+                accept="image/*" 
+                name="kades_image" 
+                id="kades_photo" 
+                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-gray-300 file:text-gray-700 file:bg-gray-100 hover:file:bg-gray-200 shadow-sm"
+            >
+            @error('kades_image')
+                <p class="text-sm text-red-500">{{ $message }}</p>
+            @enderror
             </div>
 
             {{-- Kalimat Sambutan dari Kades --}}
             <div id="section2" class="flex flex-col space-y-4">
-                <textarea 
-                    name="kades_message" 
-                    placeholder="Pesan dari kepala desa (Kades)" 
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
-                    focus:ring-blue-500 resize-none bg-white shadow-sm"
-                    rows="4"
-                ></textarea>
+            <textarea 
+                name="kades_message" 
+                placeholder="Pesan dari kepala desa (Kades)" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
+                focus:ring-blue-500 resize-none bg-white shadow-sm"
+                rows="4"
+            ></textarea>
+            @error('kades_message')
+                <p class="text-sm text-red-500">{{ $message }}</p>
+            @enderror
             </div>
 
             {{-- Submit Button --}}
             <button  
-                type="submit" 
-                class="w-full px-4 py-3 text-white bg-[#071952] rounded-lg hover:bg-[#071952bb] cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-md">
-                Submit
+            type="submit" 
+            class="w-full px-4 py-3 text-white bg-[#071952] rounded-lg hover:bg-[#071952bb] cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-md">
+            Submit
             </button>
         </form>
         
@@ -110,14 +164,16 @@
                                     </label>
                                     <input 
                                         type="text" 
-                                        name="title" 
+                                        name="title",
+                                        value="{{ $ads->title }}" 
                                         placeholder="Masukkan judul iklan" 
                                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm"
                                     >
                                 </div>
                                 <input 
                                     type="file" 
-                                    name="image" 
+                                    name="image",
+                                    value="{{ $ads->image }}" 
                                     accept="image/*" 
                                     class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border file:border-gray-300 file:text-gray-700 file:bg-gray-100 hover:file:bg-gray-200 shadow-sm"
                                 >
@@ -127,14 +183,14 @@
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
                                     focus:ring-blue-500 bg-white shadow-sm resize-none"
                                     rows="4"
-                                ></textarea>
+                                >{{ $ads->description }}</textarea>
                                 <textarea 
                                     name="sub_description" 
                                     placeholder="Masukkan sub deskripsi iklan" 
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
                                     focus:ring-blue-500 bg-white shadow-sm resize-none"
                                     rows="3"
-                                ></textarea>
+                                >{{ $ads->sub_description }}</textarea>
                                 <div class="flex flex-col gap-2">
                                     <label for="ads[0][link]" class="text-sm text-gray-600">Masukkan link (bisa berupa link WhatsApp, sosial media, email, dll.)</label>
                                     <input 
@@ -143,13 +199,13 @@
                                         placeholder="Masukkan link" 
                                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm">
                                 </div>
-                                <div id="points_container_0" class="space-y-2 my-2">
+                                <div id="points_container_{{ $ads->id }}" class="space-y-2 my-2">
                                     {{-- point item --}}
                                     @foreach ($ads->PointAds as $PointAds)
                                         <div class="point_item flex items-center gap-4">
                                                 <input 
                                                     type="text" 
-                                                    name="{{ $loop->index }}" 
+                                                    name="{{ $PointAds->id}}" 
                                                     value="{{ $PointAds->point }}"
                                                     placeholder="Masukkan poin penting" 
                                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm"
@@ -166,10 +222,12 @@
                                 </div>
                                 <div class="flex flex-wrap justify-end gap-4 mt-4">
                                     {{-- button add point --}}
-                                    <a href="{{ route('ads.add.point', $ads->id) }}"
+                                    <button  
+                                        type="button" 
+                                        onclick="addPoint({{ $ads->id }})" 
                                         class="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 lg:w-auto w-full text-center">
                                         Tambah Poin
-                                    </a>
+                                    </button>
                                     {{-- save ads --}}
                                     <button 
                                         type="submit" 

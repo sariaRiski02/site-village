@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ads;
+use App\Models\PointAds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -99,6 +100,7 @@ class AdsController extends Controller
     }
 
 
+    // point operation
     public function add_point($id)
     {
         $ads = Ads::where('id', $id)->first();
@@ -120,12 +122,29 @@ class AdsController extends Controller
         }
         return response()->json([
             'status' => 'success',
-            'message' => 'berhasil point berhasil ditambahkan'
+            'message' => 'berhasil point berhasil ditambahkan',
+            'data' => $result
         ], 200);
     }
 
 
 
+    public function delete_point($id)
+    {
+
+        $result = PointAds::where('id', $id)->delete();
+        if (!$result) {
+            return response()->json([
+                'status' => 'failed',
+                'message' => 'point gagal dihapus'
+            ], 400);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'point berhasil dihapus'
+        ], 200);
+    }
 
     public function is_publish($id)
     {
@@ -134,6 +153,13 @@ class AdsController extends Controller
             'is_publish' => !$ads->is_publish,
         ]);
 
-        return redirect()->route('dash.home');
+        if (!$result) {
+            return redirect()->route('dash.home')->with(
+                ['error' => 'gagal publikasi, Coba Lagi!']
+            );
+        }
+        return redirect()->route('dash.home')->with([
+            ['success' => 'perubahan berhasil di terapkan']
+        ]);
     }
 }

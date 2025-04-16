@@ -213,6 +213,7 @@
                                                 {{-- delete point item --}}
                                                 <button 
                                                     type="button" 
+                                                    id="{{ $PointAds->id }}"
                                                     class="px-3 py-2 text-white bg-red-500 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
                                                     onclick="removePoint(this)">
                                                     Hapus
@@ -259,7 +260,7 @@
                                     <button 
                                         type="submit" 
                                         class="w-full px-4 py-2 text-white bg-yellow-500 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                                        Publikasikan Iklan
+                                        {{ $ads->is_publish ? 'Arsipkan' : 'Publikasi' }}
                                     </button>
                                 </form>
                             </div>

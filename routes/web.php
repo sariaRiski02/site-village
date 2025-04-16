@@ -53,7 +53,6 @@ Route::prefix('/admin')->group(function () {
         Route::put('/ads-update/{slug:id}', [AdsController::class, 'ads_update'])->name('ads.update');
         Route::delete('/ads-delete/{slug:id}', [AdsController::class, 'ads_delete'])->name('ads.delete');
         Route::put('/ads-publish/{slug:id}', [AdsController::class, 'is_publish'])->name('ads.publish');
-        Route::get('/ads-add-point/{slug:id}', [AdsController::class, 'add_ads_point'])->name('ads.add.point');
     });
 });
 

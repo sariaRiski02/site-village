@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\PointAds;
 use App\Models\User;
+use App\Models\PointAds;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Database\Seeders\AdsSeeder;
+use Database\Seeders\GovSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\HomeSeeder;
 
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HomeSeeder::class,
             AdsSeeder::class,
+            GovSeeder::class
         ]);
 
 

@@ -8,7 +8,7 @@
                 </svg>
             </button>
         </div>
-        <div id="logo" class="text-white font-bold text-lg">Kema3</div>
+        <div id="logo" class="text-white font-bold text-lg">kema3</div>
         <div id="navbar" class="gap-2 text-white hidden md:flex">
             <a href="{{ route('home') }}" class="text-white font-semibold text-sm {{ Route::is('home') ? 'bg-blue-900 rounded-md' : '' }} ">
                 <div class="p-3 hover:bg-sky-800 rounded-[1vw]">

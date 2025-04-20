@@ -105,9 +105,56 @@
             <a href="#" class="bg-[#071952] text-white px-6 py-2 rounded-lg mt-3 inline-block w-fit hover:bg-blue-900 transition">Lihat aplikasi</a>
         </div>
     </section>
+    
     @endif
 
+{{-- @dd($adses) --}}
+    @foreach ($adses as $ads)
+    <section id="bumdes-billboard" class="flex flex-col w-full bg-sky-50 p-6 md:p-8 lg:p-10 rounded-lg shadow-md">
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#071952] mb-3">{{ $ads->title }}</h2>
+        </div>
+        
+        <!-- Image & Main Content -->
+        <div class="flex flex-col md:flex-row items-center gap-6 mb-8">
+            <div class="w-full md:w-1/2">
+                <img src="{{ asset('images/'.$default_hero) }}" alt="BUMDes Kema III" class="rounded-lg shadow-lg w-full h-auto">
+            </div>
+            
+            <div class="w-full md:w-1/2">
+                <p class="text-md text-[#071952] mb-6">
+                    {{ $ads->description }}
+                </p>
+                
+                <!-- Points with numbers instead of icons -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    @foreach ($ads->PointAds as $point)
+                        
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                        <div class="flex items-center justify-center bg-[#071952] text-white w-12 h-12 rounded-full mx-auto mb-3 text-xl font-bold">
+                            {{ $loop->iteration }}
+                        </div>
+                        <span class="text-sm font-medium text-[#071952]">{{ $point->point }}</span>
+                    </div>
+                    
+                    @endforeach
+                </div>
+                
+                <p class="text-md text-[#071952] mb-6">
+                    {{ $ads->sub_description }}
+                </p>
+                
+                <div class="text-center md:text-left">
+                    <a href="#" class="bg-[#071952] text-white px-6 py-3 rounded-lg inline-block hover:bg-blue-900 transition">Lihat aplikasi</a>
+                </div>
+            </div>
+        </div>
+    </section>    
+    @endforeach
 
+    
    
 
     <!-- cart berita -->

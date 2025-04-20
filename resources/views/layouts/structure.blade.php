@@ -29,7 +29,7 @@
 <body>
     @include('header.header')
 
-    <main class="mt-30 md:mt-45 flex flex-col gap-10">
+    <main class="mt-20 md:mt-30 flex flex-col gap-10">
         @yield('main')
     </main>
     

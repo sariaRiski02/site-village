@@ -79,7 +79,6 @@ class DashHomeController extends Controller
         $home = Home::first();
         $home->is_bumdes = $request->has('is_hidden');
         $home->save();
-
         return redirect()->back();
     }
 }

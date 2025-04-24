@@ -1,18 +1,60 @@
 @extends('layouts.dashboard')
 
 @section('main')
-<div class="container mx-auto px-4 py-6">
 
+{{-- alert notification jika ada perubahan data --}}
+@session('success')
+    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-4 bg-green-100 border border-green-400 text-green-700 rounded-lg shadow-xl z-50 w-3/4 max-w-4xl" role="alert">
+        <div class="flex items-center">
+            <svg class="w-8 h-8 mr-3 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+                <strong class="font-bold text-lg">Sukses!</strong>
+                <p class="block sm:inline text-base">{{ session('success') }}</p>
+            </div>
+        </div>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="this.parentElement.style.display='none'">
+            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
+            </svg>
+        </span>
+    </div>
+@endsession
+
+@session('error')
+    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-4 bg-red-100 border border-red-400 text-red-700 rounded-lg shadow-xl z-50 w-3/4 max-w-4xl" role="alert">
+        <div class="flex items-center">
+            <svg class="w-8 h-8 mr-3 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div>
+                <strong class="font-bold text-lg">Error!</strong>
+                <p class="block sm:inline text-base">{{ session('error') }}</p>
+            </div>
+        </div>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="this.parentElement.style.display='none'">
+            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
+            </svg>
+        </span>
+    </div>
+@endsession
+
+<div class="container mx-auto px-4 py-6">
     <div class="mb-6 bg-white shadow-md rounded-lg p-6">
         <h2 class="text-xl font-semibold mb-4 text-[#071952]">Edit Sambutan</h2>
-        <form id="message-content-form" method="post" class="space-y-4" onsubmit="return false;">
+        <form id="message-content-form" method="post" class="space-y-4" action="{{ route('dash.gov.set.welcome') }}">
             @csrf
             <div>
                 <label for="message-title" class="block text-sm font-medium text-gray-700 mb-2">Judul Sambutan</label>
                 <input 
                     type="text" 
                     id="message-title" 
-                    name="message_title" 
+                    value="{{ $data->welcome_message }}"
+                    name="welcome_message"
                     placeholder="Masukkan judul sambutan" 
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg 
                     focus:outline-none focus:ring-2 focus:ring-[#071952]"
@@ -23,23 +65,16 @@
                 <label for="message-body" class="block text-sm font-medium text-gray-700 mb-2">Isi Konten Sambutan</label>
                 <textarea 
                     id="message-body" 
-                    name="message_body" 
+                    name="description" 
                     placeholder="Masukkan isi konten sambutan" 
                     rows="4"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg 
                     focus:outline-none focus:ring-2 focus:ring-[#071952]"
                     required
-                ></textarea>
+                >{{ $data->description }}</textarea>
             </div>
             <div class="flex justify-end space-x-4">
-                <button 
-                    type="reset" 
-                    class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg 
-                    hover:bg-gray-300 focus:outline-none focus:ring-2 
-                    focus:ring-gray-400 focus:ring-offset-2"
-                >
-                    Atur Ulang
-                </button>
+               
                 <button 
                     type="submit" 
                     id="update-message-btn"
@@ -55,13 +90,14 @@
 
     <div class="mb-6 bg-white shadow-md rounded-lg p-6">
         <h2 class="text-xl font-semibold mb-4 text-[#071952]">Edit Sejarah</h2>
-        <form id="history-form" method="post" class="space-y-4" onsubmit="return false;">
+        <form id="history-form" method="post" class="space-y-4" action="">
             @csrf
             <div>
                 <label for="history-title" class="block text-sm font-medium text-gray-700 mb-2">Judul Sejarah</label>
                 <input 
                     type="text" 
                     id="history-title" 
+                    value="{{ $data->title_history }}"
                     name="history_title" 
                     placeholder="Masukkan judul sejarah" 
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg 
@@ -79,17 +115,10 @@
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg 
                     focus:outline-none focus:ring-2 focus:ring-[#071952]"
                     required
-                ></textarea>
+                >{{ $data->history }}</textarea>
             </div>
             <div class="flex justify-end space-x-4">
-                <button 
-                    type="reset" 
-                    class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg 
-                    hover:bg-gray-300 focus:outline-none focus:ring-2 
-                    focus:ring-gray-400 focus:ring-offset-2"
-                >
-                    Atur Ulang
-                </button>
+                
                 <button 
                     type="submit" 
                     id="update-history-btn"
